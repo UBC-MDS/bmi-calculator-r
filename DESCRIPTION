@@ -1,0 +1,19 @@
+Package: bmi.calculator
+Title: BMI Calculator, and a Little Bit More
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Qurat-ul-Ain", "Azim", email = "qazim1@student.ubc.ca", role = c("aut", "cph")),
+    person("Natalie", "Cho", email = "natcho1@student.ubc.ca", role = c("aut", "cph")),
+    person("HanChen", "Wang", email = "hcwang24@student.ubc.ca", role = c("aut", "cph")),
+    person("Kelvin", "Wong", email = "now@student.ubc.ca", role = c("aut", "cph", "cre"))
+  )
+Description: This package is for calculation of BMI (body mass index),
+    and some more computations based on weight loss goals. The package provides
+    simple answers to a user's weight loss goals in terms of how much weight
+    loss/gain and calorie deficit/increase should be aimed for with a target
+    weight and time frame in mind. The package also provides helpful
+    visualizations for these questions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
