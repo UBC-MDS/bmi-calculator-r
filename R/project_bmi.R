@@ -1,12 +1,12 @@
-#' Calculate the body mass index (BMI) based on current weight and height.
-#' 
-#' Body Mass Index (BMI) is a calculated measure of weight relative to height,
-#' defined as body weight in kilograms divided by height in meters squared
-#' (Keys et al., 1972). If `return_graph` is `TRUE`, an
-#' ggplot object is returned instead of a bmi value.
+#' Compute average BMI change per week based on current weight, height, age, 
+#' and target BMI. The average BMI increase or decrease each week is computed.
+#'  If `return_graph`is `TRUE`, a `ggplot` graph is given based on forcasted 
+#'  BMI trajectory for the target timeframe.
 #'
-#' @param weight A numeric number of body weight value. 
-#' @param height A numeric number of height value. 
+#' @param weight A positive numeric value of body weight value in kilograms. 
+#' @param height A positive numeric value of height value in meters. 
+#' @param target_bmi A positive numeric value of target BMI
+#' @param number_of_days A postive integer of number of days to achieve target
 #' @param return_graph TRUE or FALSE on whether to return a graphical 
 #' visualization instead of a bmi value. 
 #'
@@ -14,9 +14,9 @@
 #' @export
 #'
 #' @examples
-#' calculate_bmi(100, 1.85, return_graph=FALSE)
+#' project_bmi(weight=108, height=1.88, target_bmi = 28, number_of_days=60, return_graph=FALSE)
 #' 
-#' 29.218407596785973
-#' 
-calculate_bmi <- function(weight, height, return_graph=FALSE) {
+#' -0.3
+
+project_bmi <- function(weight, height, target_bmi, number_of_days, return_graph=FALSE) {
 }
