@@ -31,10 +31,10 @@ The package contains the following functions
 - `calculate_bmi`: computes user’s BMI based on weight and height. Also
   creates a visual of the BMI on scale
 - `project_bmi`: computes how much average change in BMI should be
-  achieved per day given a targeted weight and the timeframe to reach
+  achieved per week given a targeted weight and the timeframe to reach
   the goal. Also presents a visual trajectory for BMI
 - `project_calories`: computes how much average calorie intake is ideal
-  per day given a targeted weight and the timeframe to reach the goal.
+  per week given a targeted weight and the timeframe to reach the goal.
   Also presents a visual trajectory for calories
 - `exercise_plan`: suggests possible exercise plans to achieve the
   targeted weight. Also gives a graph showing how much exercise of each
@@ -55,12 +55,9 @@ person’s weights, and hence needs no dataset files to be provided. The
 only arguments needed for the functions of this calculator are current
 weight and height, and target weight with timeframe in case weight
 change is desired. It also recommends simple figures for weight
-gain/loss goals. There are many BMI calculators in the R ecosystem. Some
-of the examples can be found
-[here](https://pypi.org/project/body-mass-index/) and
-[here](https://pypi.org/project/Py-bmi/). Both these offer limited
-visual aid in understanding one’s health metrics and targets related to
-BMI.
+gain/loss goals. To the best of our understanding, there are currently
+no packages in the R ecosystem that offer functionality similar to this
+package.
 
 ## Contributing
 
@@ -77,8 +74,9 @@ The list of contributors to the original project can be found
 
 ## License
 
-`bmi_calculator` was created by Qurat-ul-Ain Azim, Natalie Cho, HanChen
-Wang, Kelvin Wong. It is licensed under the terms of the MIT license.
+`bmi_calculator` package was created by Qurat-ul-Ain Azim, Natalie Cho,
+HanChen Wang, Kelvin Wong. It is licensed under the terms of the MIT
+license.
 
 ## Credits
 
