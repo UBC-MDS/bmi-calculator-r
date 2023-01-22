@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 # bmi.calculator
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
-The goal of bmi.calculator is to ...
+This R package is for calculation of BMI (body mass index), and some more computations based on weight loss goals. The package provides simple answers to a user's weight loss goals in terms of how much weight loss/gain and calorie deficit/increase should be aimed for with a target weight and time frame in mind. The package also provides helpful visualizations about BMI and calorie intake change trajectory leading to the target.
 
 ## Installation
 
@@ -29,27 +30,34 @@ You can install the development version of bmi.calculator from [GitHub](https://
 devtools::install_github("UBC-MDS/bmi-calculator-r")
 ```
 
+## Functions
+
+The package contains the following functions
+
+- `calculate_bmi`: computes user's BMI based on weight and height. Also creates a visual of the BMI on scale
+- `project_bmi`: computes how much average change in BMI should be achieved per day given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for BMI
+- `project_calories`: computes how much average calorie intake is ideal per day given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for calories
+- `exercise_plan`: suggests possible exercise plans to achieve the targeted weight. Also gives a graph showing how much exercise of each kind is needed per day
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+The package is under active work for now, and the package functions need updating with appropriate functionality. The usage will be updated with details as the functions are updated.
 
-```{r example}
-library(bmi.calculator)
-## basic example code
-```
+## Suitability within R Ecosystem
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Our BMI calculator is unique in the sense that it provides easy and instantly understandable visuals to quickly get the gist of how healthy a person is. The package does not rely on any historical data of a person's weights, and hence needs no dataset files to be provided. The only arguments needed for the functions of this calculator are current weight and height, and target weight with timeframe in case weight change is desired. It also recommends simple figures for weight gain/loss goals. There are many BMI calculators in the R ecosystem. Some of the examples can be found [here](https://pypi.org/project/body-mass-index/) and [here](https://pypi.org/project/Py-bmi/). Both these offer limited visual aid in understanding one's health metrics and targets related to BMI.
 
-```{r cars}
-summary(cars)
-```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+## Contributing
 
-You can also embed plots, for example:
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a [Code of Conduct](https://github.com/UBC-MDS/bmi-calculator-r/blob/master/CODE_OF_CONDUCT.md). You can follow guidelines outlined [here](https://github.com/UBC-MDS/bmi-calculator-r/blob/master/.github/CONTRIBUTING.md) in case you want to contribute to the project. By contributing to this project, you agree to abide by its terms.
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+The list of contributors to the original project can be found [here](https://github.com/UBC-MDS/bmi-calculator-r/blob/master/.github/CONTRIBUTORS.md).
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+## License
+
+`bmi_calculator` was created by Qurat-ul-Ain Azim, Natalie Cho, HanChen Wang, Kelvin Wong. It is licensed under the terms of the MIT license.
+
+## Credits
+
+`bmi_calculator` was created following the guidelines of this [`Book`](https://r-pkgs.org/whole-game.html). 
