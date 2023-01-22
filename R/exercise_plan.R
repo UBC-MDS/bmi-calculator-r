@@ -1,22 +1,25 @@
-#' Calculate the body mass index (BMI) based on current weight and height.
-#' 
-#' Body Mass Index (BMI) is a calculated measure of weight relative to height,
-#' defined as body weight in kilograms divided by height in meters squared
-#' (Keys et al., 1972). If `return_graph` is `TRUE`, an
-#' ggplot object is returned instead of a bmi value.
+#' Create an exercise plan based on current weight, height, age and target BMI.
 #'
-#' @param weight A numeric number of body weight value. 
-#' @param height A numeric number of height value. 
+#' The calorie consumption needed each day is computed and a set of activities
+#' is suggested accordingly. If `return_graph` is `True`, a `ggplot` object
+#' instead of a dictionary.
+#'
+#' @param weight A numeric vector of body weight value, in kilograms.
+#' @param height A numeric vector of height, in meters.
+#' @param sex An integer vector of sex, used in the Harris–Benedict equation
+#'   estimation, 1 for male and 2 for female.
+#' @param age An integer vector of current age, in years.
+#' @param target_weight A numeric vector of target weight, in kilograms.
+#' @param number_of_days An integer vector of number of days to reach the
+#'   target weight.
 #' @param return_graph TRUE or FALSE on whether to return a graphical 
-#' visualization instead of a bmi value. 
-#'
-#' @return A numeric number of body mass index value. 
+#'   visualization instead of a dictionary. 
+#' 
+#' @return A dictionary of recommended exercises, or a graph plotting that
 #' @export
-#'
+#' 
 #' @examples
-#' calculate_bmi(100, 1.85, return_graph=FALSE)
-#' 
-#' 29.218407596785973
-#' 
-calculate_bmi <- function(weight, height, return_graph=FALSE) {
+#' exercise_plan(100, 1.83, 2, 27, 68, 30)
+exercise_plan <- function(weight, height, sex, age, target_weight, number_of_days, return_graph=FALSE) {
+    NULL
 }
