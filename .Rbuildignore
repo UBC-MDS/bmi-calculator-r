@@ -2,3 +2,5 @@
 ^\.github$
 ^CODE_OF_CONDUCT\.md$
 ^README\.Rmd$
+^.*\.Rproj$
+^\.Rproj\.user$
