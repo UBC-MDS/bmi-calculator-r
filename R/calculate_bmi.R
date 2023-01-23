@@ -48,7 +48,7 @@ calculate_bmi <- function(weight, height, return_graph=FALSE) {
           list(range = c(25, 30), color = "lightyellow"),
           list(range = c(30, 35), color = "orange"),
           list(range = c(35, 50), color = "Pink"))))
-    fig <- fig %>%
+    fig <- fig |>
       layout(
         font = list(color = "darkblue", family = "Arial"))
     return(fig)
