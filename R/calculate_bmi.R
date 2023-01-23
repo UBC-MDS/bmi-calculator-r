@@ -18,6 +18,10 @@
 #' 
 #' 29.218407596785973
 #' 
-calculate_bmi <- function(weight, height) {
-  weight / (height^2)
+calculate_bmi <- function(weight, height, return_graph=FALSE) {
+  if (return_graph == FALSE) {
+    return(weight / (height^2))
+  } else {
+    print("Hi")
+  }
 }
