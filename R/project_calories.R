@@ -73,7 +73,7 @@ project_calories <- function(weight, height, sex, age, pal, target_weight, numbe
                     type="scatter",
                     mode="lines",
                     text="Projected Weight Loss") |>
-      layout(title="Projected Weight Loss", yaxis = list(range=c(target_weight - 5, weight + 5)))
+      plotly::layout(title="Projected Weight Loss", yaxis = list(range=c(target_weight - 5, weight + 5)))
     return (fig)
     }
 }
