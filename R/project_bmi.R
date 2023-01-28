@@ -19,4 +19,40 @@
 #' -0.3
 
 project_bmi <- function(weight, height, target_bmi, number_of_days, return_graph=FALSE) {
+  
+  # check for input types
+  if (!(is.numeric(weight) & is.numeric(height) &
+        is.logical(return_graph) & is.numeric(target_bmi)
+        & is.numeric(number_of_days))) {
+    stop("TypeError! Please check the type of input parameters carefully!")
+  }
+  
+  # check for positive input values
+  if (!(weight > 0 & height > 0 & target_bmi > 0  & number_of_days > 0)) {
+    stop("ValueError! Please enter a positive non-zero input")
+  }
+  
+  # BMI change computation
+  current_bmi = weight / height^2
+  bmi_change = target_bmi - current_bmi
+  bmi_change_per_day = bmi_change / number_of_days
+  
+  # return computation or graph
+  if (return_graph == FALSE){
+    return (round(bmi_change_per_day * 7, digits = 2))
+  } 
+  else {
+    df = tibble::tibble(
+      "Days" = seq(1, number_of_days),
+      "BMI" =  seq(current_bmi, target_bmi,  bmi_change_per_day)[1:number_of_days])
+    
+    df
+    fig <- plotly::plot_ly(df, x = ~Days, y = ~BMI, type = 'scatter', mode = 'lines')
+    
+    fig <- fig |> plotly::layout(title = "Projected BMI Trajectory",
+                                 xaxis = list(title = "Days"),
+                                 yaxis = list (title = "BMI"))
+    return(fig)
+  }
+  
 }
