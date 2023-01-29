@@ -20,7 +20,7 @@
 #'
 #' @examples
 #' exercise_plan(100, 1.83, 2, 27, 68, 30)
-exercise_plan <- function(weight, height, sex, age, target_weight, number_of_days, return_graph=FALSE) {
+exercise_plan <- function(weight, height, sex, age, target_weight, number_of_days, return_graph = FALSE) {
   # Compute daily calorie loss, assume the lowest activity level
   calorie_loss_projection <- project_calories(weight, height, sex, age, 1.2, target_weight, number_of_days, return_graph = FALSE)
 
@@ -33,23 +33,36 @@ exercise_plan <- function(weight, height, sex, age, target_weight, number_of_day
 
   # Selected activities simplified and computed from here, it is on per minute:
   # https://www.nutristrategy.com/activitylist4.htm
-  activities <- c("Leisure cycling or walking" = 330/60,
-                  "Moderate rope-jumping" = 800/60,
-                  "General running" = 630/60,
-                  "Leisure swimming" = 450/60)
+  activities <- c(
+    "Leisure cycling or walking" = 330 / 60,
+    "Moderate rope-jumping" = 800 / 60,
+    "General running" = 630 / 60,
+    "Leisure swimming" = 450 / 60
+  )
 
   # Calculate daily activity needed, on an "or" manner
   activity_time <- round(calorie_consumption_each_day / activities)
   names(activity_time) <- names(activities)
 
   if (return_graph) {
-    plotly::plot_ly(data = data.frame("Activity" = names(activity_time),
-                                      "Time, in Minutes" = activity_time),
-                    x = "Time, in Minutes",
-                    y = "Activity",
-                    type = "bar",
-                    text = "Recommended Daily Activities")
+    df <- data.frame(
+      "Activity" = names(activity_time),
+      "Time" = activity_time
+    )
+    fig <- plotly::plot_ly(
+      data = df,
+      x = ~Time,
+      y = ~Activity,
+      type = "bar"
+    )
+    fig <- fig |>
+      plotly::layout(
+        title = "Recommended Daily Activities",
+        xaxis = list(title = "Time, in Minutes"),
+        yaxis = list(title = "Activity")
+      )
+    fig
   } else {
-      activity_time
+    activity_time
   }
 }
