@@ -6,7 +6,7 @@ test_that("function calculates the bmi correctly", {
 
 test_that("function returns the bmi graph correctly", {
   fig <- calculate_bmi(weight=108, height=1.88, TRUE)
-  expect_s3_class(fig, "htmlwidget")
+  expect_s3_class(fig, "plotly")
   expect_false(is.null(fig$x$attrs))
   expect_false(is.null(fig$x$layout))
 })
