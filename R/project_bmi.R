@@ -42,7 +42,7 @@ project_bmi <- function(weight, height, target_bmi, number_of_days, return_graph
     return (round(bmi_change_per_day * 7, digits = 2))
   } 
   else {
-    df = tibble::tibble(
+    df = data.frame(
       "Days" = seq(1, number_of_days),
       "BMI" =  seq(current_bmi, target_bmi,  bmi_change_per_day)[1:number_of_days])
     
