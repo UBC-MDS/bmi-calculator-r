@@ -1,6 +1,6 @@
 test_that("function returns the bmi trajectory correctly", {
   fig <- project_bmi(108, 1.87, 27, 60, return_graph=TRUE)
-  expect_true(class(fig)[2] == "htmlwidget")
+  expect_s3_class(fig, "plotly")
   expect_false(is.null(fig$x$attrs))
   expect_false(is.null(fig$x$layout))
 })
