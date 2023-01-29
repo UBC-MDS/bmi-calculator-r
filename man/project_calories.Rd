@@ -48,7 +48,7 @@ Calculate caloric intake per day based in a target weight. Assumption is
 that the goal is losing weight rather than gaining weight.
 }
 \examples{
-project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=False)
-2417.0400000000004
+project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=FALSE)
+2417.04
 
 }
