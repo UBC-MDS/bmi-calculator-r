@@ -56,7 +56,6 @@ To use the functions, see examples below:
 # Weight 100kg, height 1.85 meters, BMI value returned.
 calculate_bmi(100, 1.85, return_graph=FALSE)
 #> [1] 29.22
-# 29.218407596785973
 
 # Weight 100kg, height 1.85 meters, BMI graph returned.
 calculate_bmi(100, 1.85, return_graph=TRUE)
@@ -64,23 +63,18 @@ calculate_bmi(100, 1.85, return_graph=TRUE)
 
 <img src="man/figures/README-example1-1.png" width="100%" />
 
-![BMI graph](_images/calculate_bmi_graph_example.png)
-
 ### Compute average BMI change per week
 
 ``` r
 # Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return average BMI change per week. 
 project_bmi(100, 1.85, 25, 30, return_graph=FALSE)
 #> [1] -0.98
-# -0.98
 
 # Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return plot of Projected BMI trajectory. 
 project_bmi(100, 1.85, 25, 30, return_graph=TRUE)
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
-
-![Projected BMI trajectory graph](_images/project_bmi_graph_example.png)
 
 ### Compute caloric intake per day based in a target weight
 
@@ -89,7 +83,6 @@ project_bmi(100, 1.85, 25, 30, return_graph=TRUE)
 # 25 days to reach goal, return caloric intake per day based in a target weight. 
 project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=FALSE)
 #> [1] 2417.04
-# 2417.0400000000004
 
 # Weight 100kg, height 1.85 meters, male, 25 years old, moderate exercise 3-5 times a week, ideal weight 75kg, 
 # 25 days to reach goal, return plot of Projected Weight Loss. 
@@ -97,9 +90,6 @@ project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=TRUE)
 ```
 
 <img src="man/figures/README-example3-1.png" width="100%" />
-
-![Projected Weight Loss
-graph](_images/project_calories_graph_example.png)
 
 ### Create an exercise plan
 
@@ -111,10 +101,6 @@ exercise_plan(100, 1.83, 2, 27, 68, 30)
 #>                        213                         88 
 #>            General running           Leisure swimming 
 #>                        112                        156
-# {'Leisure cycling or walking': 213,
-# 'Moderate rope-jumping': 88,
-# 'General running': 112,
-# 'Leisure swimming': 156}
 
 # Weight 100kg, height 1.83 meters, female, aged 27
 # Target weight: 68kg in 30 days
@@ -123,8 +109,6 @@ exercise_plan(100, 1.83, 2, 27, 68, 30, return_graph=TRUE)
 ```
 
 <img src="man/figures/README-example4-1.png" width="100%" />
-
-![Exercise plan](_images/exercise_plan_graph_example.png)
 
 ## Suitability within R Ecosystem
 
