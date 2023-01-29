@@ -58,8 +58,8 @@ exercise_plan <- function(weight, height, sex, age, target_weight, number_of_day
     fig <- fig |>
       plotly::layout(
         title = "Recommended Daily Activities",
-        yaxis = list(title = "Activity"),
-        xaxis = list(title = "Time, in Minutes")
+        xaxis = list(title = "Time, in Minutes"),
+        yaxis = list(title = "Activity")
       )
     fig
   } else {
