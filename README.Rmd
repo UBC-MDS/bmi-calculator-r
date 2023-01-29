@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -34,19 +35,69 @@ devtools::install_github("UBC-MDS/bmi-calculator-r")
 
 The package contains the following functions
 
-- `calculate_bmi`: computes user's BMI based on weight and height. Also creates a visual of the BMI on scale
-- `project_bmi`: computes how much average change in BMI should be achieved per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for BMI
-- `project_calories`: computes how much average calorie intake is ideal per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for calories
-- `exercise_plan`: suggests possible exercise plans to achieve the targeted weight. Also gives a graph showing how much exercise of each kind is needed per day
+-   `calculate_bmi`: computes user's BMI based on weight and height. Also creates a visual of the BMI on scale
+-   `project_bmi`: computes how much average change in BMI should be achieved per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for BMI
+-   `project_calories`: computes how much average calorie intake is ideal per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for calories
+-   `exercise_plan`: suggests possible exercise plans to achieve the targeted weight. Also gives a graph showing how much exercise of each kind is needed per day
 
 ## Example
 
-The package is under active work for now, and the package functions need updating with appropriate functionality. The usage will be updated with details as the functions are updated.
+To use the package, load the package library with following command:
+
+```{r import}
+library(bmi.calculator)
+```
+
+To use the functions, see examples below:
+
+### Calculate BMI
+
+```{r example1}
+# Weight 100kg, height 1.85 meters, BMI value returned.
+calculate_bmi(100, 1.85, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, BMI graph returned.
+calculate_bmi(100, 1.85, return_graph=TRUE)
+```
+
+### Compute average BMI change per week
+
+```{r example2}
+# Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return average BMI change per week. 
+project_bmi(100, 1.85, 25, 30, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return plot of Projected BMI trajectory. 
+project_bmi(100, 1.85, 25, 30, return_graph=TRUE)
+```
+
+### Compute caloric intake per day based in a target weight
+
+```{r example3}
+# Weight 100kg, height 1.85 meters, male, 25 years old, moderate exercise 3-5 times a week, ideal weight 75kg, 
+# 25 days to reach goal, return caloric intake per day based in a target weight. 
+project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, male, 25 years old, moderate exercise 3-5 times a week, ideal weight 75kg, 
+# 25 days to reach goal, return plot of Projected Weight Loss. 
+project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=TRUE)
+```
+
+### Create an exercise plan
+
+```{r example4}
+# Weight 100kg, height 1.83 meters, female, aged 27
+# Target weight: 68kg in 30 days
+exercise_plan(100, 1.83, 2, 27, 68, 30)
+
+# Weight 100kg, height 1.83 meters, female, aged 27
+# Target weight: 68kg in 30 days
+# But this time, a graph instead:
+exercise_plan(100, 1.83, 2, 27, 68, 30, return_graph=TRUE)
+```
 
 ## Suitability within R Ecosystem
 
 Our BMI calculator is unique in the sense that it provides easy and instantly understandable visuals to quickly get the gist of how healthy a person is. The package does not rely on any historical data of a person's weights, and hence needs no dataset files to be provided. The only arguments needed for the functions of this calculator are current weight and height, and target weight with timeframe in case weight change is desired. It also recommends simple figures for weight gain/loss goals. To the best of our understanding, there are currently no packages in the R ecosystem that offer functionality similar to this package.
-
 
 ## Contributing
 
@@ -60,4 +111,4 @@ The list of contributors to the original project can be found [here](https://git
 
 ## Credits
 
-`bmi_calculator` was created following the guidelines of this [`Book`](https://r-pkgs.org/whole-game.html). 
+`bmi_calculator` was created following the guidelines of this [`Book`](https://r-pkgs.org/whole-game.html).
