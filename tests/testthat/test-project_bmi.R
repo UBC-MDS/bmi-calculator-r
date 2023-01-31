@@ -1,3 +1,7 @@
+test_that("function returns the bmi computation correctly", {
+  expect_equal(project_bmi(weight=108, height=1.88, target_bmi = 28, number_of_days=60, return_graph=FALSE), -0.3)  
+})
+
 test_that("function returns the bmi trajectory correctly", {
   fig <- project_bmi(108, 1.87, 27, 60, return_graph=TRUE)
   expect_true(class(fig)[2] == "htmlwidget")
