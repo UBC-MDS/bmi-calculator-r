@@ -27,16 +27,16 @@
 #' 
 project_calories <- function(weight, height, sex, age, pal, target_weight, number_of_days, return_graph=FALSE) {
   # Ensuring that inputs are valid
-  if (!(is.numeric(weight) || 
-        is.numeric(height) || 
-        is.numeric(age) || 
-        is.numeric(pal) ||
-        is.numeric(target_weight) || 
-        is.numeric(number_of_days) ||
+  if (!(is.numeric(weight) &&
+        is.numeric(height) &&
+        is.numeric(age) &&
+        is.numeric(pal) &&
+        is.numeric(target_weight) &&
+        is.numeric(number_of_days) &&
         is.logical(return_graph))) {
     stop("TypeError! Please check carefully on the type of input parameters!")
   }
-  
+
   if (weight <= 0 || height <= 0 || age <= 0 || target_weight <= 0 || number_of_days <= 0) {
       stop("ValueError! Please check your input values and ensure that they are appropriate.")}
   
