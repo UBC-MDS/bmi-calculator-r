@@ -15,9 +15,12 @@ test_that("function handles exceptions properly", {
   expect_error(project_calories(weight=NULL, height=1.83, sex=2, age=27, pal=1.6, target_weight=65, number_of_days=30))
   expect_error(project_calories(weight=68, height=NULL, sex=2, age=27, pal=1.6, target_weight=65, number_of_days=30))
   expect_error(project_calories(weight=68, height=1.83, sex=NULL, age=27, pal=1.6, target_weight=65, number_of_days=30))
+  expect_error(project_calories(weight=68, height=1.83, sex=3, age=27, pal=1.6, target_weight=65, number_of_days=30))
   expect_error(project_calories(weight=68, height=1.83, sex=2, age=NULL, pal=1.6, target_weight=65, number_of_days=30))
   expect_error(project_calories(weight=68, height=1.83, sex=2, age=27, pal=NULL, target_weight=65, number_of_days=30))
+  expect_error(project_calories(weight=68, height=1.83, sex=2, age=27, pal=2.0, target_weight=65, number_of_days=30))
   expect_error(project_calories(weight=68, height=1.83, sex=2, age=27, pal=1.6, target_weight=NULL, number_of_days=30))
+  expect_error(project_calories(weight=68, height=1.83, sex=2, age=27, pal=1.6, target_weight=NULL, number_of_days=30, return_graph=1))
   expect_error(project_calories())
 })
 
