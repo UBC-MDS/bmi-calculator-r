@@ -1,0 +1,92 @@
+---
+title: "bmi.calculator"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{bmi.calculator}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This R package is for calculation of BMI (body mass index), and some more computations based on weight loss goals. The package provides simple answers to a user's weight loss goals in terms of how much weight loss/gain and calorie deficit/increase should be aimed for with a target weight and time frame in mind. The package also provides helpful visualizations about BMI and calorie intake change trajectory leading to the target.
+
+This document introduces you to bmi.calculator’s basic set of tools, and shows you how to use them. 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Installation
+
+You can install the development version of bmi.calculator from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("UBC-MDS/bmi-calculator-r")
+```
+
+## Functions
+
+The package contains the following functions
+
+-   `calculate_bmi`: computes user's BMI based on weight and height. Also creates a visual of the BMI on scale
+-   `project_bmi`: computes how much average change in BMI should be achieved per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for BMI
+-   `project_calories`: computes how much average calorie intake is ideal per week given a targeted weight and the timeframe to reach the goal. Also presents a visual trajectory for calories
+-   `exercise_plan`: suggests possible exercise plans to achieve the targeted weight. Also gives a graph showing how much exercise of each kind is needed per day
+
+## Example
+
+To use the package, load the package library with following command:
+
+```{r import}
+library(bmi.calculator)
+```
+
+To use the functions, see examples below:
+
+### Calculate BMI
+
+```{r example1, fig.height=4, fig.width=6}
+# Weight 100kg, height 1.85 meters, BMI value returned.
+calculate_bmi(100, 1.85, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, BMI graph returned.
+calculate_bmi(100, 1.85, return_graph=TRUE)
+```
+
+### Compute average BMI change per week
+
+```{r example2, fig.height=4, fig.width=6}
+# Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return average BMI change per week. 
+project_bmi(100, 1.85, 25, 30, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, BMI goal 25, 30 days to reach goal, return plot of Projected BMI trajectory. 
+project_bmi(100, 1.85, 25, 30, return_graph=TRUE)
+```
+
+### Compute caloric intake per day based in a target weight
+
+```{r example3, fig.height=4, fig.width=6}
+# Weight 100kg, height 1.85 meters, male, 25 years old, moderate exercise 3-5 times a week, ideal weight 75kg, 
+# 25 days to reach goal, return caloric intake per day based in a target weight. 
+project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=FALSE)
+
+# Weight 100kg, height 1.85 meters, male, 25 years old, moderate exercise 3-5 times a week, ideal weight 75kg, 
+# 25 days to reach goal, return plot of Projected Weight Loss. 
+project_calories(100, 1.85, 1, 25, 1.6, 75, 25, return_graph=TRUE)
+```
+
+### Create an exercise plan
+
+```{r example4, fig.height=4, fig.width=6}
+# Weight 100kg, height 1.83 meters, female, aged 27
+# Target weight: 68kg in 30 days
+exercise_plan(100, 1.83, 2, 27, 68, 30)
+
+# Weight 100kg, height 1.83 meters, female, aged 27
+# Target weight: 68kg in 30 days
+# But this time, a graph instead:
+exercise_plan(100, 1.83, 2, 27, 68, 30, return_graph=TRUE)
+```
