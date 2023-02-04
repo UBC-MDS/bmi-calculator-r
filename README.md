@@ -18,6 +18,8 @@ weight and time frame in mind. The package also provides helpful
 visualizations about BMI and calorie intake change trajectory leading to
 the target.
 
+The latest documentation of the package, hosted on GitHub pages, can be found [here](https://ubc-mds.github.io/bmi-calculator-r/).
+
 ## Installation
 
 You can install the development version of bmi.calculator from
